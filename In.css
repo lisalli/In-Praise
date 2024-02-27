@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'Adobe Caslon Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Adobe Caslon Pro Regular'), url('ACaslonPro-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'YuWeiShuFaYunMoFanTi-2';
+    font-style: normal;
+    font-weight: normal;
+    src: url('YuWeiShuFaYunMoFanTi-2.ttf');
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #bbb;
+    background-color: #111;
+    cursor: none;
+    overflow: auto;
+    overflow-x: hidden;
+    animation: changeColor 5s infinite alternate;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: rgb(70, 70, 70);
+    }
+    100% {
+        background-color: rgb(15, 15, 15);
+    }
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+h1 {
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 8vw;
+    font-family: 'YuWeiShuFaYunMoFanTi-2';
+}
+
+h1:hover {
+    text-shadow: 0px 0px 8px rgba(145, 143, 143, 0.994);
+    font-size: 10vw;
+    animation: blurAnimation 0.5s forwards;
+}
+
+@keyframes blurAnimation {
+    from { filter: blur(0); }
+    to { filter: blur(2px); }
+}
+
+.bodyText {
+    margin: 0 10%;
+    transition: text-shadow 0.5s ease;
+    font-family:'Adobe Caslon Pro Regular';
+    font-size: 1.75vw;
+    text-align: justify;
+}
+
+.bodyText:hover {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #a59a9a;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #bbb;
+}
+
+
+  
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%); /* Centers the circle */
+    transition: padding 0.3s ease;
+    backdrop-filter: blur(4px)
+}
+
+#backBtn{
+    width: 80px;
+    font-size: 1vw;
+}
+
+#nextBtn{
+    width: 80px;
+    font-size: 1vw;
+}
+#meteor-shower{
+    top: 0;
+    position: absolute;
+    z-index: 999;
+}
+.meteor {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: fall 1s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-250vh) rotateZ(45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(250vh) rotateZ(45deg);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #backBtn{
+        width: 80px;
+        font-size: 15px;
+    }
+    
+    #nextBtn{
+        width: 80px;
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h1:hover {
+        font-size: 110px;
+    }
+
+    .bodyText {
+        font-size: 20px;
+    }    
+}

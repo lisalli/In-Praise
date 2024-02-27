@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+@font-face {
+    font-family: 'YuWeiShuFaYunMoFanTi-2';
+    font-style: normal;
+    font-weight: normal;
+    src: url('YuWeiShuFaYunMoFanTi-2.ttf');
+}
+
+body {
+  background-color: #010;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-family: "Cairo";
+  text-align: center;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  width: 100vh;
+  letter-spacing: 1px;
+  line-height:2
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: relative;
+}
+
+h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 10px 0;
+  margin-left: 5vw;
+}
+
+.grid-container {
+  position: absolute;
+  right: 5vw;
+  height: 60vh;
+  display: grid;
+  margin-top: 20vh;
+  grid-template-columns: auto; /* Single column layout */
+  gap: 10px; /* Space between grid items */
+  padding: 10px;
+}
+
+.grid-item {
+  font-size: 4em; /* Large text */
+  text-align: right;
+  color: #f0f0f0;
+  padding: 20px;
+  transition: all 0.5s ease; /* Smooth transition for the hover effect */
+}
+
+.grid-item:hover {
+  filter: blur(3px); /* Blurry effect on hover */
+  transform: scale(1.4);
+}
+
+.grid-link {
+  color: inherit; /* Makes the link color the same as the parent element */
+  text-decoration: none; /* Removes underline from links */
+  display: block; /* Makes the link fill the entire grid item */
+  height: 100%; /* Ensures the link fills the entire height of the grid item */
+  width: 100%; /* Ensures the link fills the entire width of the grid item */
+  font-family: 'YuWeiShuFaYunMoFanTi-2';
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 2px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+
+*{
+    user-select: none;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        margin: 0 30vw 0 0;
+    }
+}
